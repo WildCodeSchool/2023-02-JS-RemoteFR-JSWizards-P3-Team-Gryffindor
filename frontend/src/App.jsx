@@ -1,3 +1,5 @@
+import "./tailwind.css";
+
 import Home from "./pages/Home";
 
 import "./App.css";
