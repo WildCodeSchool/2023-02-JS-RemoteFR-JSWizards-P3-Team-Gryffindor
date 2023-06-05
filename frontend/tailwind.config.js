@@ -9,12 +9,6 @@ module.exports = {
         primary_blue: "#257593",
         primary_black: "#3E3E3F",
       },
-
-      fontFamily: {
-        sans: ['"Poppins"', "sans-serif"],
-        serif: ['"AnimalesFantastic"', "serif"],
-      },
-
       fontSize: {
         "2xl": [
           "2rem",
