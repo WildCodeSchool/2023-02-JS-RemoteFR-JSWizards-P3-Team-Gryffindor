@@ -1,0 +1,24 @@
+.adminBar {
+    display: flex;
+    justify-content: left;
+    margin-right: 85%;
+    
+
+}
+
+.adminLine {
+    color: white;
+    border: 1px solid white ;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+.adminList {
+    padding: 5rem 0;
+    margin-left: 2rem
+}
+
+.adminList:hover {
+    cursor: pointer;
+    
+}
