@@ -2,7 +2,7 @@ import React from "react";
 
 function Biographie() {
   return (
-    <div className="bg-primary_blue min-h-screen">
+    <div className="bg-primary_blue min-h-auto">
       <div>
         <h1 className="text-6xl text-white py-10">
           Hippolyte Mortier de Trévise
