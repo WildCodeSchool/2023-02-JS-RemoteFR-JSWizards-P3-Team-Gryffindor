@@ -3,11 +3,11 @@ import React from "react";
 function APropos() {
   return (
     <div className="bg-primary_blue min-h-screen">
-      <div>
+      <div className="flex justify-center pt-4 pb-6">
         <img src="./src/assets/Afac.png" alt="Logo AFAC" />
       </div>
-      <div>
-        <p>
+      <div className="flex justify-evenly mx-10">
+        <p className="text-white text-left pr-20">
           Association des Familles amies de CAPELINE- Centre D'Accompagnement
           Pédagogique en Ligne et d'Ingénierie pédagogique. <br />
           <br /> Soutien aux élèves, accompagnement et/ou formation d'étudiants,
@@ -27,9 +27,31 @@ function APropos() {
           autour de l'enseignement avec le numérique (Réunion, Inde, Madagascar,
           Belgique...)
         </p>
+        <img
+          src="./src/assets/image_icono.svg"
+          alt="Iconotheque"
+          className="w-2/5 border-[12px] border-primary_black object-cover"
+        />
       </div>
       <div>
-        <img src="./src/assets/image_icono.svg" alt="Iconotheque" />
+        <h1 className="mt-10 text-white text-xl ">
+          Les images présentes sur le site ne sont pas libres de droit
+        </h1>
+      </div>
+      <div className="flex justify-between mx-16 mt-10 pb-2 ">
+        <a href="https://museo.vandanjon.com/index.php/en/">
+          <img
+            src="./src/assets/objettemoin.png"
+            alt="Logo Objet Témoin"
+            className="w-36"
+          />
+        </a>
+        <a href="https://www.ihoi.org/app/photopro.sk/ihoi_icono/">
+          <img src="./src/assets/iconotheque.gif" alt="Logo Iconotheque" />
+        </a>
+        <a href="https://capeline974.re/CAPELINE/CARTOTHEQUE/capeline-accueil.html">
+          <img src="./src/assets/Afac.png" alt="" className="w-40 pt-2" />
+        </a>
       </div>
     </div>
   );
