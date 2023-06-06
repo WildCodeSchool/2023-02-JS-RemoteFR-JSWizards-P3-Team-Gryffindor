@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -38,7 +37,6 @@ code {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  
 }
 
 .App-link {

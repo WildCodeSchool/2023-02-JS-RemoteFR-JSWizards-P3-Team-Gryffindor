@@ -1,12 +1,9 @@
 import "./App.css";
-
-import Home from "./pages/Home";
+// import Biographie from "./components/Biographie";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
     </div>
   );
 }
