@@ -1,11 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
 .adminBar {
     display: flex;
     justify-content: left;
+    margin-right: 85%;
     
 
 }
@@ -20,6 +16,9 @@
 .adminList {
     padding: 5rem 0;
     margin-left: 2rem
-    
+}
 
+.adminList:hover {
+    cursor: pointer;
+    
 }
