@@ -1,7 +1,7 @@
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
+import { Button, Form, Input } from "antd";
 
-export default function Connexion() {
+export default function Inscription() {
   return (
     <div className="flex justify-center h-screen items-center bg-primary_blue ">
       <Form
@@ -24,8 +24,23 @@ export default function Connexion() {
           ]}
         >
           <Input
-            prefix={<UserOutlined className="site-form-item-icon" />}
+            prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+          />
+        </Form.Item>
+        <Form.Item
+          className="pr-4 pl-4"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Veuillez entrer votre adresse email!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Identifiant"
           />
         </Form.Item>
         <Form.Item
@@ -44,12 +59,24 @@ export default function Connexion() {
             placeholder="Mot de passe"
           />
         </Form.Item>
+        <Form.Item
+          className="pr-4 pl-4"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Veuillez entrer votre mot de passe!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Confirmez votre mot de passe"
+          />
+        </Form.Item>
         <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox className="pb-2">Ce souvenir de moi</Checkbox>
-          </Form.Item>
-
-          <p className="login-form-forgot"> Mot de passe oublié ?</p>
+          <p className="login-form-forgot"> Déjà inscrit ? Connectez-vous</p>
         </Form.Item>
 
         <Form.Item>
@@ -58,7 +85,7 @@ export default function Connexion() {
             htmlType="submit"
             className="login-form-button text-black border-solid border-1 border-sky-500"
           >
-            Connexion
+            Inscritpion
           </Button>
         </Form.Item>
       </Form>

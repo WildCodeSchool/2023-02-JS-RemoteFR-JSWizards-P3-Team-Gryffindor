@@ -1,12 +1,14 @@
 import "./App.css";
-import Connexion from "./compenents/Connexion";
+// import Connexion from "./compenents/Connexion";
+import Inscription from "./compenents/Inscription";
 
 // import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Connexion />
+      <Inscription />
+      {/* <Connexion /> */}
     </div>
   );
 }
