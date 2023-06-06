@@ -1,11 +1,12 @@
+// import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import APropos from "./components/APropos";
-// import Biographie from "./components/Biographie";
+import AuteurPage from "./pages/AuteurPage";
+
 
 function App() {
   return (
     <div className="App">
-      <APropos />
+      <AuteurPage />
     </div>
   );
 }
