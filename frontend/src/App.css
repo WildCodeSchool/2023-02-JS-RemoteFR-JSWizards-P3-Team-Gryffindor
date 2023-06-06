@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  background-color: #257593;
   margin: 0;
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -54,4 +55,8 @@ code {
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+body{
+  background-color: #257593;
 }
