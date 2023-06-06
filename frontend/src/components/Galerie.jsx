@@ -14,7 +14,7 @@ function Gallery() {
   return (
     
 <div className="bg-primary_blue min-h-screen flex flex-col">
-      <div className="bg-gradient-to-r from-primary_green to-primary_blue h-2"></div>
+  
       <div className="flex justify-center items-center py-8">
         <h1 className="text-4xl font-bold text-white">
           <span className="placeholder-title">Notre sélection</span>
