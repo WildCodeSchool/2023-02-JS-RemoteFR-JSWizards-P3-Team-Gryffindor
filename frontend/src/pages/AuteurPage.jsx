@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import Biographie from "../components/Biographie";
+import Navbar from "../Components/Navbar";
+import Biographie from "../Components/Biographie";
 
 function AuteurPage() {
   return (

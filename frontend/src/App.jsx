@@ -1,8 +1,6 @@
-// import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
-
 import AuteurPage from "./pages/AuteurPage";
+// import Home from "./pages/Home";
 
 function App() {
   return (
