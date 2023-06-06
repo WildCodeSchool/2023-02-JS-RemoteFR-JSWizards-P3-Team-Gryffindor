@@ -1,13 +1,11 @@
+// import { Routes, Route } from "react-router-dom";
 import "./App.css";
 // import Connexion from "./compenents/Connexion";
-// import Inscription from "./compenents/Inscription";
-
-// import Home from "./pages/Home";
-
+import Inscription from "./compenents/Inscription";
 function App() {
   return (
     <div className="App">
-      {/* <Inscription /> */}
+      <Inscription />
       {/* <Connexion /> */}
     </div>
   );
