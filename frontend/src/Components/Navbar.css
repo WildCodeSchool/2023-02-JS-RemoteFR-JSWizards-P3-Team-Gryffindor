@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: right;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li {
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+ul {
+  text-align: right;
+  margin-top: 2rem;
+}
+
+.logo-AFAC {
+  margin: 1rem 1rem;
+}
