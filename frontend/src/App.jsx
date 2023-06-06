@@ -1,12 +1,10 @@
 import "./App.css";
-
-import Home from "./pages/Home";
+import Gallery from "@components/Galerie";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Gallery />
     </div>
   );
 }
