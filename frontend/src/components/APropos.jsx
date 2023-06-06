@@ -2,11 +2,8 @@ import React from "react";
 
 function APropos() {
   return (
-    <div className="bg-primary_blue min-h-screen">
-      <div className="flex justify-center pt-4 pb-6">
-        <img src="./src/assets/Afac.png" alt="Logo AFAC" />
-      </div>
-      <div className="flex justify-evenly mx-10">
+    <div className="bg-primary_blue">
+      <div className="flex justify-evenly mx-10 pt-20">
         <p className="text-white text-left pr-20">
           Association des Familles amies de CAPELINE- Centre D'Accompagnement
           Pédagogique en Ligne et d'Ingénierie pédagogique. <br />

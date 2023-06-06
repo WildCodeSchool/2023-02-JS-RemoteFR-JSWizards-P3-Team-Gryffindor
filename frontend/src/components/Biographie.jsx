@@ -15,7 +15,7 @@ function Biographie() {
           src="./src/assets/Napoléon_Mortier_de_Trévise.png"
           alt="Hippolyte Mortier de Trévise"
         />
-        <p className="text-left w-1/2 mt-32 text-white mr-32">
+        <p className="text-left w-1/2 mt-10 text-white mr-32">
           Hippolyte Charles Napoléon Mortier de Trévise, 3e duc de Trévise, est
           né le 4 mai 1835 a Paris, et mort le 13 février 1892, quelques jours
           après son frère Jean-François Hippolyte Mortier, marquis de Trévise.
