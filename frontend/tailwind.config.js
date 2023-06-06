@@ -1,5 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -8,13 +6,8 @@ module.exports = {
         primary_red: "#7F253E",
         primary_blue: "#257593",
         primary_black: "#3E3E3F",
+        connexion_login: "#D9D9D9",
       },
-
-      fontFamily: {
-        sans: ['"Poppins"', "sans-serif"],
-        serif: ['"AnimalesFantastic"', "serif"],
-      },
-
       fontSize: {
         "2xl": [
           "2rem",

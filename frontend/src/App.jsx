@@ -1,12 +1,12 @@
 import "./App.css";
+import Connexion from "./compenents/Connexion";
 
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Connexion />
     </div>
   );
 }
