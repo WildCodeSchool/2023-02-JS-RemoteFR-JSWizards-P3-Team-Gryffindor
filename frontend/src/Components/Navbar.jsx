@@ -1,42 +1,41 @@
-// import { Link } from "react-router-dom";//
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function NavBar() {
   return (
-    /*
-    <header className="flex bg-primary_black">
+    <header className="flexx bg-primary_black">
       <a href="/acceuil">
         <img
-          src="/assets/logo/logo-AFAC.png"
+          src="./src/assets/logo/logo-AFAC.png"
           alt="logo AFAC"
-          width="350"
-          height="60"
+          width="100"
+          height="50"
           className="logo-AFAC"
         />
       </a>
-      <nav> 
+      <nav>
         <ul className="container">
-          <li>
+          <li className="navList">
             <Link to="/acceuil">Acceuil</Link>
           </li>
-          <li>
+          <li className="navList">
             <Link to="/galerie">Galerie</Link>
           </li>
-          <li>
+          <li className="navList">
             <Link to="/oeuvres">Oeuvres</Link>
           </li>
-          <li>
-            <Link to="/auteurs">Auteurs</Link>
+          <li className="navList">
+            <Link to="/auteur">Auteur</Link>
           </li>
-          <li>
+          <li className="navList">
             <Link to="/aPropos">A Propos</Link>
           </li>
-          <li>
+          <li className="navList">
             <Link to="/connexion">Connexion</Link>
           </li>
         </ul>
       </nav>
-    </header> */
+    </header> /*
     <header className="flexx bg-primary_black">
       <a href="/acceuil">
         <img
@@ -69,6 +68,6 @@ export default function NavBar() {
           </li>
         </ul>
       </nav>
-    </header>
+    </header> */
   );
 }
