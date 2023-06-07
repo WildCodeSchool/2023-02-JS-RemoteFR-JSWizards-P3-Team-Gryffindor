@@ -1,8 +1,9 @@
+import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 
 function Utilisateur() {
   return (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-40">
       <Form
         className="bg-primary_black pt-10 px-10 rounded-3xl"
         name="basic"
@@ -30,7 +31,8 @@ function Utilisateur() {
           ]}
         >
           <Input
-            className="w-96 placeholder-gray-500 placeholder-opacity-75"
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            className="w-96 "
             placeholder="Identifiant"
           />
         </Form.Item>
@@ -45,7 +47,8 @@ function Utilisateur() {
           ]}
         >
           <Input
-            className="w-96  placeholder-gray-500 placeholder-opacity-75"
+            prefix={<MailOutlined className="site-form-item-icon" />}
+            className="w-96"
             placeholder="Adresse e-mail"
           />
         </Form.Item>
@@ -60,7 +63,8 @@ function Utilisateur() {
           ]}
         >
           <Input.Password
-            className="w-96 placeholder-gray-500 placeholder-opacity-75"
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            className="w-96"
             placeholder="Mot de passe"
           />
         </Form.Item>
@@ -75,7 +79,8 @@ function Utilisateur() {
           ]}
         >
           <Input.Password
-            className="w-96 placeholder-gray-500 placeholder-opacity-75"
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            className="w-96"
             placeholder="Nouveau Mot de passe"
           />
         </Form.Item>
