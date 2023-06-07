@@ -10,11 +10,19 @@ import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
 // import Utilisateur from "./Components/Utilisateur";
 
+
+
+
+
+
 function App() {
   return (
+
     <Router>
       <div className="App">
         <NavBar />
+       
+
         <Routes>
           <Route path="/accueil" element={<Accueil />} />
           <Route path="/galerie" element={<Gallery />} />
