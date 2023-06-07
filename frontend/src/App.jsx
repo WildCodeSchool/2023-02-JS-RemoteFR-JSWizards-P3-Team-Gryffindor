@@ -1,17 +1,12 @@
 import NavBar from "./Components/Navbar";
 import "./App.css";
-
-import Gallery from "./Components/Galerie";
-
-// import AuteurPage from "./pages/AuteurPage";
-
-// import Home from "./pages/Home";
+import OeuvreSolo from "./Components/OeuvreSolo";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Gallery />
+      <OeuvreSolo />
     </div>
   );
 }
