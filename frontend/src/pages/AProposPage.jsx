@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import APropos from "../components/APropos";
+import Navbar from "../Components/Navbar";
+import APropos from "../Components/APropos";
 
 function AProposPage() {
   return (

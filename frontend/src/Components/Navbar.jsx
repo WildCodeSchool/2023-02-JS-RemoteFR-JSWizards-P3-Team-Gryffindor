@@ -37,7 +37,7 @@ export default function NavBar() {
         </ul>
       </nav>
     </header> */
-    <header className="flex bg-primary_black">
+    <header className="flexx bg-primary_black">
       <a href="/acceuil">
         <img
           src="./src/assets/logo/logo-AFAC.png"
