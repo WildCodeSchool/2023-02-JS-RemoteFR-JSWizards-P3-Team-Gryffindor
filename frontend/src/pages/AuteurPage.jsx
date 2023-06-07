@@ -1,12 +1,10 @@
-import Navbar from "../Components/Navbar";
 import Biographie from "../Components/Biographie";
 
 function AuteurPage() {
   return (
-    <>
-      <Navbar />
+    <div>
       <Biographie />
-    </>
+    </div>
   );
 }
 
