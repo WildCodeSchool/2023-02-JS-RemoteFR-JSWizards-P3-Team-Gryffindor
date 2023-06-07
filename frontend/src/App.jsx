@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./Components/Navbar";
 import "./App.css";
-// import Utilisateur from "./Components/Utilisateur";
+import Utilisateur from "./Components/Utilisateur";
 // import Gallery from "./Components/Galerie";
+
+
+
 
 
 import Gallery from "./Components/Galerie";
@@ -18,14 +21,15 @@ import Accueil from "./components/Accueil";
 
 
 
-
 function App() {
   return (
+
+ 
 
     <Router>
       <div className="App">
         <NavBar />
-        <Accueil />
+       
         <Routes>
           <Route path="/galerie" element={<Gallery />} />
           <Route path="/auteur" element={<AuteurPage />} />
@@ -36,6 +40,7 @@ function App() {
     </Router>
 
    
+
   );
 }
 
