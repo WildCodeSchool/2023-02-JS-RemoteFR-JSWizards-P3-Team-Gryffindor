@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: right;
+  margin-top: 2rem;
+}
+.flexx {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.logo-AFAC {
+  margin: 0.2rem 2rem;
+  width: 10rem;
+}
