@@ -16,7 +16,7 @@ export default function NavBar() {
       <nav>
         <ul className="container">
           <li className="navList">
-            <Link to="/acceuil">Acceuil</Link>
+            <Link to="/accueil">Accueil</Link>
           </li>
           <li className="navList">
             <Link to="/galerie">Galerie</Link>
