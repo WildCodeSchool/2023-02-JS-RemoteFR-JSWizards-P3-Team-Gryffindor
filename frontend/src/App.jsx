@@ -1,7 +1,7 @@
 import NavBar from "./Components/Navbar";
 import "./App.css";
-
-import Gallery from "./Components/Galerie";
+import Utilisateur from "./Components/Utilisateur";
+// import Gallery from "./Components/Galerie";
 
 // import AuteurPage from "./pages/AuteurPage";
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Gallery />
+      <Utilisateur />
     </div>
   );
 }
