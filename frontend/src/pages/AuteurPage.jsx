@@ -1,4 +1,4 @@
-import Biographie from "../components/Biographie";
+import Biographie from "../Components/Biographie";
 
 function AuteurPage() {
   return (

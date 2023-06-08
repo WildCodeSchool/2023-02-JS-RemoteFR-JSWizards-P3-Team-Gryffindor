@@ -1,4 +1,4 @@
-import APropos from "../components/APropos";
+import APropos from "../Components/APropos";
 
 function AProposPage() {
   return (
