@@ -8,20 +8,15 @@ import AProposPage from "./pages/AProposPage";
 import Connexion from "./Components/Connexion";
 import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
+import OeuvreForm from "./Components/OeuvreForm";
 // import Utilisateur from "./Components/Utilisateur";
-
-
-
-
-
 
 function App() {
   return (
-
     <Router>
       <div className="App">
         <NavBar />
-       
+        <OeuvreForm />
 
         <Routes>
           <Route path="/accueil" element={<Accueil />} />
