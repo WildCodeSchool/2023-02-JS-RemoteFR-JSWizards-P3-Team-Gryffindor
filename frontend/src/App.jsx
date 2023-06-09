@@ -8,7 +8,8 @@ import AProposPage from "./pages/AProposPage";
 import Connexion from "./Components/Connexion";
 import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
-import AdminGerer from "./Components/AdminGerer";
+// import AdminGerer from "./Components/AdminGerer";
+import AdminModifSuppUserPage from "./pages/AdminModifSuppUserPage";
 // import Utilisateur from "./Components/Utilisateur";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
-        <AdminGerer />
+        <AdminModifSuppUserPage />
 
         <Routes>
           <Route path="/accueil" element={<Accueil />} />
