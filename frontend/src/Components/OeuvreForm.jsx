@@ -12,8 +12,9 @@ const normFile = (e) => {
 
 function OeuvreForm() {
   return (
-    <div>
+    <div className=" flex justify-center mt-40 mt-40">
       <Form
+        className="bg-primary_black pt-10 pb-10 px-10 rounded-3xl w-[640px] border-solid	border-2 border-black"
         labelCol={{
           span: 4,
         }}
