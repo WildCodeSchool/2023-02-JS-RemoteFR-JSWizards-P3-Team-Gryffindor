@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import imagesData from "./images.json"; // Importer le fichier JSON
+import imagesData from "./Oeuvres.json"; // Importer le fichier JSON
 import "./Galerie.css";
 
 function Gallery() {
@@ -7,7 +7,12 @@ function Gallery() {
 
   useEffect(() => {
     setImages(
-      imagesData.images.map((image, index) => ({ id: index, url: image }))
+      imagesData.map((oeuvre) => ({
+        id: oeuvre.id,
+        url: oeuvre.image,
+        type: oeuvre.type,
+        titre: oeuvre.titre,
+      }))
     );
   }, []);
 
@@ -32,10 +37,10 @@ function Gallery() {
                 className="object-cover h-full w-full opacity-100 hover:opacity-30"
               />
               <div className="texthover opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-300 absolute inset-0 flex items-center justify-center">
-                <div className="text grey-600 italic ">
-                  <p>Type d'oeuvre</p>
-                  <div className="text grey-600 font-bold ">
-                    <p>Titre de l'oeuvre</p>
+                <div className="text grey-600 italic">
+                  <p>{image.type}</p>
+                  <div className="text grey-600 font-bold">
+                    <p>{image.titre}</p>
                   </div>
                 </div>
               </div>
