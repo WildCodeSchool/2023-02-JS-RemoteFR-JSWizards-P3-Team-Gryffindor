@@ -8,8 +8,12 @@ import AProposPage from "./pages/AProposPage";
 import Connexion from "./Components/Connexion";
 import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
+
 // import AdminGerer from "./Components/AdminGerer";
 import AdminModifSuppUserPage from "./pages/AdminModifSuppUserPage";
+
+
+
 // import Utilisateur from "./Components/Utilisateur";
 
 function App() {
@@ -17,10 +21,13 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
+
         <AdminModifSuppUserPage />
 
+
+
         <Routes>
-          <Route path="/accueil" element={<Accueil />} />
+          <Route path="/" element={<Accueil />} />
           <Route path="/galerie" element={<Gallery />} />
           <Route path="/oeuvres" element={<OeuvreSolo />} />
           <Route path="/auteur" element={<AuteurPage />} />
@@ -29,6 +36,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+
   );
 }
 
