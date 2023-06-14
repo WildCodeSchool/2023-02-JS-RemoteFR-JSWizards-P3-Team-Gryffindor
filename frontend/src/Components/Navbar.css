@@ -23,3 +23,7 @@
   margin: 0.2rem 2rem;
   width: 10rem;
 }
+
+.logo-AFAC:hover {
+  cursor: pointer;
+}
