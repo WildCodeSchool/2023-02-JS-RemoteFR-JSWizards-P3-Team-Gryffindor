@@ -3,7 +3,7 @@ import "./AdminBar.css";
 export default function AdminBar() {
   return (
     <div className="adminBar bg-primary_black ">
-      <ul>
+      <ul className="pr-10">
         <li className="adminList">
           <a href="ajouter" className="adminLine">
             Ajouter
