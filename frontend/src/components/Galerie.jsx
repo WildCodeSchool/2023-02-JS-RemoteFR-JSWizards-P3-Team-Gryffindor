@@ -37,14 +37,17 @@ function Gallery() {
                 alt="Aquarelle"
                 className="object-cover h-full w-full opacity-100 hover:opacity-30"
               />
-              <div className="texthover opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-300 absolute inset-0 flex items-center justify-center">
-                <div className="text grey-600 italic">
-                  <p>{image.type}</p>
-                  <div className="text grey-600 font-bold">
-                    <p>{image.res}</p>
+              <a href="/oeuvres">
+                <div className="texthover opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-300 absolute inset-0 flex items-center justify-center">
+                  <div className="text grey-600 italic">
+                    <p>{image.type}</p>
+
+                    <div className="text grey-600 font-bold">
+                      <p>{image.res}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           ))}
         </div>

@@ -17,7 +17,7 @@ function App() {
         <NavBar />
 
         <Routes>
-          <Route path="/accueil" element={<Accueil />} />
+          <Route path="/" element={<Accueil />} />
           <Route path="/galerie" element={<Gallery />} />
           <Route path="/oeuvres" element={<OeuvreSolo />} />
           <Route path="/auteur" element={<AuteurPage />} />
