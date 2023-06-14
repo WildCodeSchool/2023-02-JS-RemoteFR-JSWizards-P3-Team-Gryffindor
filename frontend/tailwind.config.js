@@ -7,6 +7,7 @@ module.exports = {
         primary_blue: "#257593",
         primary_black: "#3E3E3F",
         connexion_login: "#D9D9D9",
+        regiser_b: "#1677FF",
       },
       fontSize: {
         "2xl": [

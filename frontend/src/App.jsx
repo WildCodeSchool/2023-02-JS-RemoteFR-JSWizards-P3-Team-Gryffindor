@@ -9,13 +9,10 @@ import "./App.css";
 
 import Gallery from "./Components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
+import ConnexInscri from "./pages/ConnexInscriPage";
 import AProposPage from "./pages/AProposPage";
-import Connexion from "./Components/Connexion";
 import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
-
-
-import Accueil from "./Components/Accueil";
 
 function App() {
   return (
@@ -33,7 +30,6 @@ function App() {
         </div>
       </Router>
     </div>
-
   );
 }
 
