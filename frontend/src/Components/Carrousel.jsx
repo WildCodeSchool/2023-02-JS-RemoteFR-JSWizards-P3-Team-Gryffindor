@@ -8,19 +8,16 @@ function Carrousel() {
       id: 1,
       reference: "40FI79",
       image: "./src/assets/images/Cheminee_40FI79.jpg",
-      // ... other artwork properties
     },
     {
       id: 2,
       reference: "40FI78",
       image: "./src/assets/images/UsineBelAir_40FI78.jpg",
-      // ... other artwork properties
     },
     {
       id: 3,
       reference: "40FI80",
       image: "./src/assets/images/FRAD974_40FI80.jpg",
-      // ... other artwork properties
     },
   ];
 
@@ -37,12 +34,11 @@ function Carrousel() {
       <img
         src={artworks[currentImage].image}
         alt={`CurrentImage-${currentImage}`}
-        style={{ width: "500px", height: "300px" }} // Définissez les dimensions souhaitées ici
+        style={{ width: "500px", height: "300px" }}
       />
       <div>
         <h3>{artworks[currentImage].titre}</h3>
         <p>{artworks[currentImage].description}</p>
-        {/* Render other artwork information */}
       </div>
     </div>
   );
