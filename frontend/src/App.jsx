@@ -1,7 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./Components/Navbar";
 import "./App.css";
-// import Utilisateur from "@components/Utilisateur";
+
+
+// import Utilisateur from "./Components/Utilisateur";
+// import Gallery from "./Components/Galerie";
+
+
 import Gallery from "./Components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
 import AProposPage from "./pages/AProposPage";
@@ -9,29 +14,26 @@ import Connexion from "./Components/Connexion";
 import Accueil from "./Components/Accueil";
 import OeuvreSolo from "./Components/OeuvreSolo";
 
-// import AdminGerer from "./Components/AdminGerer";
-import AdminModifSuppUserPage from "./pages/AdminModifSuppUserPage";
 
-// import Utilisateur from "./Components/Utilisateur";
+import Accueil from "./Components/Accueil";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
+    <div>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Accueil />
+          <Routes>
+            <Route path="/galerie" element={<Gallery />} />
+            <Route path="/auteur" element={<AuteurPage />} />
+            <Route path="/aPropos" element={<AProposPage />} />
+            <Route path="/connexion" element={<Connexion />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
 
-        <AdminModifSuppUserPage />
-
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-          <Route path="/galerie" element={<Gallery />} />
-          <Route path="/oeuvres" element={<OeuvreSolo />} />
-          <Route path="/auteur" element={<AuteurPage />} />
-          <Route path="/aPropos" element={<AProposPage />} />
-          <Route path="/connexion" element={<Connexion />} />
-        </Routes>
-      </div>
-    </Router>
   );
 }
 
