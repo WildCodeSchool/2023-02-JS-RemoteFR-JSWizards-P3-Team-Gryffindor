@@ -3,7 +3,7 @@ import { Button, Form, Input } from "antd";
 
 export default function Inscription() {
   return (
-    <div className="flex justify-center h-screen items-center bg-primary_blue ">
+    <div className="flex justify-center items-center bg-primary_blue ">
       <Form
         name="normal_login"
         className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid	border-2 border-black"
@@ -11,10 +11,8 @@ export default function Inscription() {
           remember: true,
         }}
       >
-        <p className="pt-10 pb-6 text-xl">Bienvenue !</p>
-
         <Form.Item
-          className="pr-4 pl-4"
+          className="pr-4 pl-4 pt-20"
           name="email"
           rules={[
             {
@@ -30,11 +28,11 @@ export default function Inscription() {
         </Form.Item>
         <Form.Item
           className="pr-4 pl-4"
-          name="email"
+          name="username"
           rules={[
             {
               required: true,
-              message: "Veuillez entrer votre adresse email!",
+              message: "Veuillez entrer votre identifiant!",
             },
           ]}
         >
@@ -61,11 +59,11 @@ export default function Inscription() {
         </Form.Item>
         <Form.Item
           className="pr-4 pl-4"
-          name="password"
+          name="passwordConfirm"
           rules={[
             {
               required: true,
-              message: "Veuillez entrer votre mot de passe!",
+              message: "Veuillez confirmez votre mot de passe!",
             },
           ]}
         >
@@ -78,7 +76,6 @@ export default function Inscription() {
         <Form.Item>
           <p className="login-form-forgot"> Déjà inscrit ? Connectez-vous</p>
         </Form.Item>
-
         <Form.Item>
           <Button
             type="primary"

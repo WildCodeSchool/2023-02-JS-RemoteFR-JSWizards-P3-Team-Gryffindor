@@ -1,25 +1,69 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+import { toast, ToastContainer } from "react-toastify";
+import dbUsers from "./db_users.json";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Connexion() {
+  const onFinish = (values) => {
+    const matchedUser = dbUsers.find((user) => {
+      return user.email === values.email && user.password === values.password;
+    });
+
+    const good = () => {
+      toast.success("Vous êtes bien connecté !", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        pauseOnFocusLoss: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    };
+
+    const wrong = () => {
+      toast.error("Mauvais email ou mot de passe!", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        pauseOnFocusLoss: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    };
+
+    if (matchedUser) {
+      setTimeout(() => {
+        window.location.href = "/accueil";
+      }, 3000);
+      good();
+    } else {
+      wrong();
+    }
+  };
   return (
-    <div className="flex justify-center h-screen items-center bg-primary_blue ">
+    <div className="flex justify-center items-center bg-primary_blue">
       <Form
         name="normal_login"
-        className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid	border-2 border-black"
+        className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid border-2 border-black"
         initialValues={{
           remember: true,
         }}
+        onFinish={onFinish}
       >
-        <p className="pt-10 pb-6 text-xl">Bienvenue !</p>
-
         <Form.Item
-          className="pr-4 pl-4"
+          className="pr-4 pl-4 pt-20"
           name="email"
           rules={[
             {
               required: true,
-              message: "Veuillez entrer votre adresse email!",
+              message: "Veuillez entrer votre adresse email !",
             },
           ]}
         >
@@ -34,7 +78,7 @@ export default function Connexion() {
           rules={[
             {
               required: true,
-              message: "Veuillez entrer votre mot de passe!",
+              message: "Veuillez entrer votre mot de passe !",
             },
           ]}
         >
@@ -46,12 +90,10 @@ export default function Connexion() {
         </Form.Item>
         <Form.Item>
           <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox className="pb-2">Ce souvenir de moi</Checkbox>
+            <Checkbox className="pb-2">Se souvenir de moi</Checkbox>
           </Form.Item>
-
-          <p className="login-form-forgot"> Mot de passe oublié ?</p>
+          <p className="login-form-forgot">Mot de passe oublié ?</p>
         </Form.Item>
-
         <Form.Item>
           <Button
             type="primary"
@@ -62,6 +104,7 @@ export default function Connexion() {
           </Button>
         </Form.Item>
       </Form>
+      <ToastContainer />
     </div>
   );
 }
