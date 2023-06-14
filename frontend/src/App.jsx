@@ -12,8 +12,6 @@ import OeuvreSolo from "./Components/OeuvreSolo";
 // import AdminGerer from "./Components/AdminGerer";
 import AdminModifSuppUserPage from "./pages/AdminModifSuppUserPage";
 
-
-
 // import Utilisateur from "./Components/Utilisateur";
 
 function App() {
@@ -23,8 +21,6 @@ function App() {
         <NavBar />
 
         <AdminModifSuppUserPage />
-
-
 
         <Routes>
           <Route path="/" element={<Accueil />} />
@@ -36,7 +32,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-
   );
 }
 

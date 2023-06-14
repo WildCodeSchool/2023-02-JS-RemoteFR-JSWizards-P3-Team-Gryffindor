@@ -2,23 +2,44 @@ import React, { useState, useEffect } from "react";
 
 function Carrousel() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    "https://picsum.photos/700/300?random=1",
-    "https://picsum.photos/700/300?random=2",
-    "https://picsum.photos/700/300?random=3",
+
+  const artworks = [
+    {
+      id: 1,
+      reference: "40FI79",
+      image: "./src/assets/images/Cheminee_40FI79.jpg",
+    },
+    {
+      id: 2,
+      reference: "40FI78",
+      image: "./src/assets/images/UsineBelAir_40FI78.jpg",
+    },
+    {
+      id: 3,
+      reference: "40FI80",
+      image: "./src/assets/images/FRAD974_40FI80.jpg",
+    },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 4000);
+      setCurrentImage((prevImage) => (prevImage + 1) % artworks.length);
+    }, 10000);
 
     return () => clearInterval(interval);
-  }, [images]);
+  }, [artworks]);
 
   return (
     <div>
-      <img src={images[currentImage]} alt={`CurrentImage-${currentImage}`} />
+      <img
+        src={artworks[currentImage].image}
+        alt={`CurrentImage-${currentImage}`}
+        style={{ width: "500px", height: "300px" }}
+      />
+      <div>
+        <h3>{artworks[currentImage].titre}</h3>
+        <p>{artworks[currentImage].description}</p>
+      </div>
     </div>
   );
 }
