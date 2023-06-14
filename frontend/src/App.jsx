@@ -5,13 +5,10 @@ import "./App.css";
 // import Utilisateur from "./Components/Utilisateur";
 // import Gallery from "./Components/Galerie";
 
-
-
 import Gallery from "./Components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
 import AProposPage from "./pages/AProposPage";
 import Connexion from "./Components/Connexion";
-
 
 import Accueil from "./Components/Accueil";
 
@@ -30,9 +27,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <Gallery />
     </div>
-
   );
 }
 

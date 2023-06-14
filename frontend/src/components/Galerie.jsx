@@ -12,15 +12,16 @@ function Gallery() {
         url: oeuvre.image,
         type: oeuvre.type,
         titre: oeuvre.titre,
+        res: oeuvre.res,
       }))
     );
   }, []);
 
   return (
-    <div className="bg-primary_blue min-h-screen flex flex-col">
+    <div className="bg-primary_blue min-h-screen flex flex-col mb-20">
       <div className="flex justify-center items-center py-8">
         <h1 className="text-4xl font-bold text-white">
-          <span className="placeholder-title">Notre sélection</span>
+          <span className="placeholder-title">Galerie</span>
         </h1>
       </div>
 
@@ -40,7 +41,7 @@ function Gallery() {
                 <div className="text grey-600 italic">
                   <p>{image.type}</p>
                   <div className="text grey-600 font-bold">
-                    <p>{image.titre}</p>
+                    <p>{image.res}</p>
                   </div>
                 </div>
               </div>
