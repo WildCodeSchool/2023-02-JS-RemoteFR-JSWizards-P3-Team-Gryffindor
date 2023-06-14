@@ -4,7 +4,7 @@ import "./Navbar.css";
 export default function NavBar() {
   return (
     <header className="flexx bg-primary_black">
-      <a href="/accueil">
+      <a href="/">
         <img
           src="./src/assets/logo/logo-AFAC.png"
           alt="logo AFAC"
@@ -21,9 +21,7 @@ export default function NavBar() {
           <li className="navList">
             <Link to="/galerie">Galerie</Link>
           </li>
-          <li className="navList">
-            <Link to="/oeuvres">Oeuvres</Link>
-          </li>
+
           <li className="navList">
             <Link to="/auteur">Auteur</Link>
           </li>
