@@ -16,7 +16,7 @@ function ConnexInscri() {
   };
 
   return (
-    <div className="mt-[8rem]">
+    <div className="mt-[4rem]">
       <Switch
         defaultChecked
         checkedChildren="Login"
