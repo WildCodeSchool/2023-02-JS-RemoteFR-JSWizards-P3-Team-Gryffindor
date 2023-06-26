@@ -3,49 +3,53 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import dbUsers from "./db_users.json";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 export default function Connexion() {
-  const onFinish = (values) => {
-    const matchedUser = dbUsers.find((user) => {
-      return user.email === values.email && user.password === values.password;
+  const good = () => {
+    toast.success("Vous êtes bien connecté !", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
+  };
 
-    const good = () => {
-      toast.success("Vous êtes bien connecté !", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+  const wrong = () => {
+    toast.error("Mauvais email ou mot de passe!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    const email = e.email;
+    const password = e.password;
+    const body = { email, password };
+    const sendForm = async () => {
+      try {
+        const reslogin = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/login`,
+          body
+        );
+        good();
+      } catch (error) {
+        wrong();
+      }
     };
-
-    const wrong = () => {
-      toast.error("Mauvais email ou mot de passe!", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    };
-
-    if (matchedUser) {
-      setTimeout(() => {
-        window.location.href = "/accueil";
-      }, 3000);
-      good();
-    } else {
-      wrong();
-    }
+    sendForm();
   };
   return (
     <div className="flex justify-center items-center bg-primary_blue">
@@ -55,7 +59,7 @@ export default function Connexion() {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={handleSubmit}
       >
         <Form.Item
           className="pr-4 pl-4 pt-20"
