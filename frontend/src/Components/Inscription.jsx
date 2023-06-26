@@ -1,11 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
 import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, Modal } from "antd";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Rgpd from "./Rgpd";
-import axios from "axios";
 
 export default function Inscription() {
   const [acceptedRGPD, setAcceptedRGPD] = useState(false);
@@ -30,13 +31,13 @@ export default function Inscription() {
   };
 
   const handleSubmit = (e) => {
-    const email = e.email;
+    const { email } = e;
     const regex1 = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-    const password = e.password;
+    const { password } = e;
     const regex2 =
       /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-    const username = e.username;
-    const passwordConfirm = e.passwordConfirm;
+    const { username } = e;
+    const { passwordConfirm } = e;
 
     if (regex1.test(email)) {
       if (regex2.test(password)) {
@@ -68,13 +69,13 @@ export default function Inscription() {
           };
           sendForm();
         } else {
-          console.log("mot de passe ne corresponde pas");
+          // info("mot de passe ne corresponde pas"); toast a faire
         }
       } else {
-        console.log("mot de passe pas assez fort 1min 1maj etcc...");
+        // info("mot de passe pas assez fort 1min 1maj etcc..."); toast a faire
       }
     } else {
-      console.log("email non conformz");
+      // info("email non conformz"); toast a faire
     }
   };
 

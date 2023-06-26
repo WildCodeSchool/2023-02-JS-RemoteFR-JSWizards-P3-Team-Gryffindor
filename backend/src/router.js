@@ -3,12 +3,9 @@ const express = require("express");
 const router = express.Router();
 
 const usersControllers = require("./controllers/usersControllers");
-const { validateUser } = require("./middleware/validator");
-const {
-  hashPassword,
-  verifyPassword,
-  verifyToken,
-} = require("./middleware/password");
+const { validateUser } = require("./middleware/Validator");
+const { hashPassword, verifyPassword } =
+  require("./middleware/password").default;
 
 router.post("/register", validateUser, hashPassword, usersControllers.add);
 router.post("/login", usersControllers.login, verifyPassword);

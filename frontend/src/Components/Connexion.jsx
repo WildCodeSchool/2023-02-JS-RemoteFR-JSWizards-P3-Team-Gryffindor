@@ -1,11 +1,14 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import dbUsers from "./db_users.json";
 import "react-toastify/dist/ReactToastify.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
 
 export default function Connexion() {
+  const navigate = useNavigate();
+
   const good = () => {
     toast.success("Vous êtes bien connecté !", {
       position: "bottom-right",
@@ -35,8 +38,8 @@ export default function Connexion() {
   };
 
   const handleSubmit = (e) => {
-    const email = e.email;
-    const password = e.password;
+    const { email } = e;
+    const { password } = e;
     const body = { email, password };
     const sendForm = async () => {
       try {
@@ -44,7 +47,10 @@ export default function Connexion() {
           `${import.meta.env.VITE_BACKEND_URL}/login`,
           body
         );
-        good();
+        if (reslogin.status === 200) {
+          good();
+          navigate("/accueil");
+        }
       } catch (error) {
         wrong();
       }
