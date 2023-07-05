@@ -1,6 +1,6 @@
-import AdminGerer from "../Components/AdminGerer";
-import AdminModifUser from "../Components/AdminModifUser";
-import AdminBar from "../Components/AdminBar";
+import AdminGerer from "../components/AdminGerer";
+import AdminModifUser from "../components/AdminModifUser";
+import AdminBar from "../components/AdminBar";
 
 function AdminModifSuppUserPage() {
   return (
