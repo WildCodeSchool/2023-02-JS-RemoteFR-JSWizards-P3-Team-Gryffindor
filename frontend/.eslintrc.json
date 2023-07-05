@@ -18,8 +18,7 @@
   "plugins": ["react", "import"],
   "rules": {
     "no-console": "off",
-    "import/no-unresolved": [2, { "caseSensitive": false }],
-    "import/extensions": ["error", "never", { "svg": "always" }],
+    "import/no-unresolved": ["error", { "commonjs": true }],
     "no-restricted-syntax": [
       "error",
       {
