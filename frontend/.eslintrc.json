@@ -40,7 +40,7 @@
       "eslint-import-resolver-custom-alias": {
         "alias": {
           "@assets": "./src/assets",
-          "@components": "./src/components",
+          "@components": "./src/Components",
           "@pages": "./src/pages",
           "@services": "./src/services"
         },
