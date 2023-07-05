@@ -19,6 +19,7 @@
   "rules": {
     "no-console": "off",
     "import/no-unresolved": [2, { "caseSensitive": false }],
+    "import/extensions": ["error", "never", { "svg": "always" }],
     "no-restricted-syntax": [
       "error",
       {
