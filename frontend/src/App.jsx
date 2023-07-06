@@ -25,7 +25,7 @@ function App() {
           />
 
           <Route path="/auteur" element={<AuteurPage />} />
-          <Route path="/aPropos" element={<AProposPage />} />
+          <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/connexion" element={<ConnexInscri />} />
         </Routes>
       </div>
