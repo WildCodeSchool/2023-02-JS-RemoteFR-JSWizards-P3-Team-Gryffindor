@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const usersControllers = require("./controllers/usersControllers");
-const { validateUser } = require("./middleware/Validator");
+const { validateUser } = require("./middleware/validator");
 const { hashPassword, verifyPassword } =
   require("./middleware/password").default;
 
