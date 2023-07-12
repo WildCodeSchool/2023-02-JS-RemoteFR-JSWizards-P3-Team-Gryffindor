@@ -1,8 +1,8 @@
 import "../App.css";
 import React, { useState } from "react";
 import { Switch } from "antd";
-import Connexion from "../Components/Connexion";
-import Inscription from "../Components/Inscription";
+import Connexion from "../components/Connexion";
+import Inscription from "../components/Inscription";
 
 function ConnexInscri() {
   const [affichage, setAffichage] = useState("connexion");

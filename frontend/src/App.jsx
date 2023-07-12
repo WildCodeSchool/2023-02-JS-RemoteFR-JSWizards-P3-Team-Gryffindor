@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./Components/Navbar";
+import NavBar from "./components/Navbar";
 import "./App.css";
 
-import Gallery from "./Components/Galerie";
+import Gallery from "./components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
 import ConnexInscri from "./pages/ConnexInscriPage";
 import AProposPage from "./pages/AProposPage";
-import Accueil from "./Components/Accueil";
-import OeuvreSolo from "./Components/OeuvreSolo";
-import imagesData from "./Components/Oeuvres.json"; // Importez le fichier JSON d'œuvres
+import Accueil from "./components/Accueil";
+import OeuvreSolo from "./components/OeuvreSolo";
+import imagesData from "./components/Oeuvres.json"; // Importez le fichier JSON d'œuvres
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           />
 
           <Route path="/auteur" element={<AuteurPage />} />
-          <Route path="/aPropos" element={<AProposPage />} />
+          <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/connexion" element={<ConnexInscri />} />
         </Routes>
       </div>
