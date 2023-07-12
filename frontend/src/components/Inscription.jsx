@@ -1,16 +1,83 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
 import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, Modal } from "antd";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Rgpd from "./Rgpd";
 
 export default function Inscription() {
   const [acceptedRGPD, setAcceptedRGPD] = useState(false);
+  const navigate = useNavigate();
 
   const handleRGPDChange = (e) => {
     setAcceptedRGPD(e.target.checked);
   };
 
-  const handleSubmit = () => {};
+  const good = () => {
+    toast.success("Vous êtes bien inscrit et connecté !", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    const { email } = e;
+    const regex1 = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    const { password } = e;
+    const regex2 =
+      /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+    const { username } = e;
+    const { passwordConfirm } = e;
+
+    if (regex1.test(email)) {
+      if (regex2.test(password)) {
+        if (password === passwordConfirm) {
+          const body = { email, username, password };
+
+          const sendForm = async () => {
+            try {
+              const resregister = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL}/register`,
+                body
+              );
+
+              if (resregister.status === 201) {
+                const bodylogin = { email, password };
+                const reslogin = await axios.post(
+                  `${import.meta.env.VITE_BACKEND_URL}/login`,
+                  bodylogin
+                );
+                if (reslogin.status === 200) {
+                  good();
+                  navigate("/accueil");
+                }
+              }
+            } catch (error) {
+              // Gérer les erreurs de requête
+              console.error(error);
+            }
+          };
+          sendForm();
+        } else {
+          // info("mot de passe ne corresponde pas"); toast a faire
+        }
+      } else {
+        // info("mot de passe pas assez fort 1min 1maj etcc..."); toast a faire
+      }
+    } else {
+      // info("email non conformz"); toast a faire
+    }
+  };
 
   const info = () => {
     Modal.info({
@@ -47,6 +114,7 @@ export default function Inscription() {
           <Input
             prefix={<MailOutlined className="site-form-item-icon" />}
             placeholder="Email"
+            type="email"
           />
         </Form.Item>
         <Form.Item
@@ -76,6 +144,7 @@ export default function Inscription() {
         >
           <Input
             prefix={<LockOutlined className="site-form-item-icon" />}
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
             type="password"
             placeholder="Mot de passe"
           />
@@ -133,6 +202,7 @@ export default function Inscription() {
           <Button onClick={info}>Consulter les CGU</Button>
         </Form.Item>
       </Form>
+      <ToastContainer />
     </div>
   );
 }
