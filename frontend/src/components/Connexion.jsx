@@ -1,51 +1,61 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import dbUsers from "./db_users.json";
 import "react-toastify/dist/ReactToastify.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
 
 export default function Connexion() {
-  const onFinish = (values) => {
-    const matchedUser = dbUsers.find((user) => {
-      return user.email === values.email && user.password === values.password;
+  const navigate = useNavigate();
+
+  const good = () => {
+    toast.success("Vous êtes bien connecté !", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
+  };
 
-    const good = () => {
-      toast.success("Vous êtes bien connecté !", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+  const wrong = () => {
+    toast.error("Mauvais email ou mot de passe!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    const { email } = e;
+    const { password } = e;
+    const body = { email, password };
+    const sendForm = async () => {
+      try {
+        const reslogin = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/login`,
+          body
+        );
+        if (reslogin.status === 200) {
+          good();
+          navigate("/accueil");
+        }
+      } catch (error) {
+        wrong();
+      }
     };
-
-    const wrong = () => {
-      toast.error("Mauvais email ou mot de passe!", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    };
-
-    if (matchedUser) {
-      setTimeout(() => {
-        window.location.href = "/accueil";
-      }, 3000);
-      good();
-    } else {
-      wrong();
-    }
+    sendForm();
   };
   return (
     <div className="flex justify-center items-center bg-primary_blue">
@@ -55,7 +65,7 @@ export default function Connexion() {
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={handleSubmit}
       >
         <Form.Item
           className="pr-4 pl-4 pt-20"
