@@ -205,14 +205,13 @@ export default function Inscription() {
         <Form.Item>
           <p className="login-form-forgot">
             Déjà inscrit ?&nbsp;
-            <button
-              type="button"
+            <a
               href="#"
               className="text-regiser_b hover:underline hover:text-regiser_b "
               onClick={handleInscriptionClick}
             >
               Connectez-vous
-            </button>
+            </a>
           </p>
         </Form.Item>
         <Form.Item>

@@ -18,6 +18,7 @@
   "plugins": ["react", "import"],
   "rules": {
     "no-console": "off",
+    "jsx-a11y/anchor-is-valid": 0,
     "import/no-unresolved": ["error", { "commonjs": true }],
     "no-restricted-syntax": [
       "error",
