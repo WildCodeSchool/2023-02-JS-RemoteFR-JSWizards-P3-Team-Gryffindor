@@ -78,6 +78,9 @@ export default function Inscription() {
       // info("email non conformz"); toast a faire
     }
   };
+  const handleInscriptionClick = () => {
+    navigate("/connexion");
+  };
 
   const info = () => {
     Modal.info({
@@ -92,7 +95,7 @@ export default function Inscription() {
   };
 
   return (
-    <div className="flex justify-center items-center bg-primary_blue">
+    <div className="flex justify-center items-center h-[45rem] bg-primary_blue">
       <Form
         name="normal_login"
         className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid	border-2 border-black"
@@ -101,8 +104,9 @@ export default function Inscription() {
         }}
         onFinish={handleSubmit}
       >
+        <h1 className="text-2xl font-medium	pt-5">Bienvenue</h1>
         <Form.Item
-          className="pr-4 pl-4 pt-20"
+          className="pr-4 pl-4 pt-10"
           name="email"
           rules={[
             {
@@ -199,7 +203,22 @@ export default function Inscription() {
           </Form.Item>
         )}
         <Form.Item>
-          <Button onClick={info}>Consulter les CGU</Button>
+          <p className="login-form-forgot">
+            Déjà inscrit ?&nbsp;
+            <button
+              type="button"
+              href="#"
+              className="text-regiser_b hover:underline hover:text-regiser_b "
+              onClick={handleInscriptionClick}
+            >
+              Connectez-vous
+            </button>
+          </p>
+        </Form.Item>
+        <Form.Item>
+          <Button className="border-sky-500" onClick={info}>
+            Consulter les CGU
+          </Button>
         </Form.Item>
       </Form>
       <ToastContainer />

@@ -1,5 +1,5 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -37,6 +37,10 @@ export default function Connexion() {
     });
   };
 
+  const handleInscriptionClick = () => {
+    navigate("/inscription");
+  };
+
   const handleSubmit = (e) => {
     const { email } = e;
     const { password } = e;
@@ -58,7 +62,7 @@ export default function Connexion() {
     sendForm();
   };
   return (
-    <div className="flex justify-center items-center bg-primary_blue">
+    <div className="flex justify-center items-center h-[45rem] bg-primary_blue">
       <Form
         name="normal_login"
         className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid border-2 border-black"
@@ -67,8 +71,9 @@ export default function Connexion() {
         }}
         onFinish={handleSubmit}
       >
+        <h1 className="text-2xl font-medium	pt-5">Bienvenue</h1>
         <Form.Item
-          className="pr-4 pl-4 pt-20"
+          className="pr-4 pl-4 pt-10"
           name="email"
           rules={[
             {
@@ -99,10 +104,17 @@ export default function Connexion() {
           />
         </Form.Item>
         <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox className="pb-2">Se souvenir de moi</Checkbox>
-          </Form.Item>
-          <p className="login-form-forgot">Mot de passe oublié ?</p>
+          <p className="login-form-forgot">
+            Pas de compte ?&nbsp;
+            <button
+              type="button"
+              href="#"
+              className="text-regiser_b hover:underline hover:text-regiser_b "
+              onClick={handleInscriptionClick}
+            >
+              Inscrivez-vous
+            </button>
+          </p>
         </Form.Item>
         <Form.Item>
           <Button
