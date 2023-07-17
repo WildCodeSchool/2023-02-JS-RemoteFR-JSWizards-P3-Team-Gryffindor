@@ -1,64 +1,79 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import dbUsers from "./db_users.json";
 import "react-toastify/dist/ReactToastify.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
 
 export default function Connexion() {
-  const onFinish = (values) => {
-    const matchedUser = dbUsers.find((user) => {
-      return user.email === values.email && user.password === values.password;
+  const navigate = useNavigate();
+
+  const good = () => {
+    toast.success("Vous êtes bien connecté !", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
+  };
 
-    const good = () => {
-      toast.success("Vous êtes bien connecté !", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+  const wrong = () => {
+    toast.error("Mauvais email ou mot de passe!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleInscriptionClick = () => {
+    navigate("/inscription");
+  };
+
+  const handleSubmit = (e) => {
+    const { email } = e;
+    const { password } = e;
+    const body = { email, password };
+    const sendForm = async () => {
+      try {
+        const reslogin = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/login`,
+          body
+        );
+        if (reslogin.status === 200) {
+          good();
+          navigate("/accueil");
+        }
+      } catch (error) {
+        wrong();
+      }
     };
-
-    const wrong = () => {
-      toast.error("Mauvais email ou mot de passe!", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        pauseOnFocusLoss: false,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    };
-
-    if (matchedUser) {
-      setTimeout(() => {
-        window.location.href = "/accueil";
-      }, 3000);
-      good();
-    } else {
-      wrong();
-    }
+    sendForm();
   };
   return (
-    <div className="flex justify-center items-center bg-primary_blue">
+    <div className="flex justify-center items-center h-[45rem] bg-primary_blue">
       <Form
         name="normal_login"
         className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid border-2 border-black"
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={handleSubmit}
       >
+        <h1 className="text-2xl font-medium	pt-5">Bienvenue</h1>
         <Form.Item
-          className="pr-4 pl-4 pt-20"
+          className="pr-4 pl-4 pt-10"
           name="email"
           rules={[
             {
@@ -89,10 +104,17 @@ export default function Connexion() {
           />
         </Form.Item>
         <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox className="pb-2">Se souvenir de moi</Checkbox>
-          </Form.Item>
-          <p className="login-form-forgot">Mot de passe oublié ?</p>
+          <p className="login-form-forgot">
+            Pas de compte ?&nbsp;
+            <button
+              type="button"
+              href="#"
+              className="text-regiser_b hover:underline hover:text-regiser_b "
+              onClick={handleInscriptionClick}
+            >
+              Inscrivez-vous
+            </button>
+          </p>
         </Form.Item>
         <Form.Item>
           <Button
