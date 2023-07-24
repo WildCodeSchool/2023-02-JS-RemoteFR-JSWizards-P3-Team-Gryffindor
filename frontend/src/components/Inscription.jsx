@@ -146,7 +146,7 @@ export default function Inscription() {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
             type="password"
@@ -163,14 +163,14 @@ export default function Inscription() {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Confirmez votre mot de passe"
           />
         </Form.Item>
         <Form.Item
-          className="pr-8 pl-8"
+          className="pr-8 mb-0 pl-8"
           name="rgpd"
           valuePropName="checked"
           rules={[
@@ -180,30 +180,34 @@ export default function Inscription() {
             },
           ]}
         >
-          <Checkbox className="pr-4 pl-4" onChange={handleRGPDChange}>
+          <Checkbox className="pr-4 pl-4 mb-4" onChange={handleRGPDChange}>
             J'accepte les termes et conditions liés à la RGPD.
           </Checkbox>
         </Form.Item>
+        <Form.Item>
+          <Button type="text" className="bg-[#cccccc]" onClick={info}>
+            Consulter les CGU
+          </Button>
+        </Form.Item>
         {!acceptedRGPD && (
           <Form.Item>
-            <p className="text-red-500">
+            <p className="text-red-500 ">
               Veuillez accepter les termes et conditions liés à la RGPD.
             </p>
           </Form.Item>
         )}
-        {acceptedRGPD && (
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button text-black border-solid border-1 border-sky-500"
-            >
-              Inscription
-            </Button>
-          </Form.Item>
-        )}
+
         <Form.Item>
-          <p className="login-form-forgot">
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button text-black border-solid border-1 border-sky-500"
+          >
+            Inscription
+          </Button>
+        </Form.Item>
+        <Form.Item>
+          <p className="login-form-forgot ">
             Déjà inscrit ?&nbsp;
             <a
               href="#"
@@ -213,11 +217,6 @@ export default function Inscription() {
               Connectez-vous
             </a>
           </p>
-        </Form.Item>
-        <Form.Item>
-          <Button className="border-sky-500" onClick={info}>
-            Consulter les CGU
-          </Button>
         </Form.Item>
       </Form>
       <ToastContainer />

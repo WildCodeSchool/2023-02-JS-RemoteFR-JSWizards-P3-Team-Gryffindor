@@ -97,7 +97,7 @@ export default function Connexion() {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Mot de passe"
