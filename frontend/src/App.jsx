@@ -5,6 +5,7 @@ import "./App.css";
 import Gallery from "./components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
 import ConnexInscri from "./pages/ConnexInscriPage";
+import InscriConnexion from "./pages/InscriConnexion";
 import AProposPage from "./pages/AProposPage";
 import Accueil from "./components/Accueil";
 import OeuvreSolo from "./components/OeuvreSolo";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/auteur" element={<AuteurPage />} />
           <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/connexion" element={<ConnexInscri />} />
+          <Route path="/inscription" element={<InscriConnexion />} />
         </Routes>
       </div>
     </Router>

@@ -1,8 +1,8 @@
 import "../App.css";
-import Connexion from "../components/Connexion";
+import Inscription from "../components/Inscription";
 
 function ConnexInscri() {
-  return <Connexion />;
+  return <Inscription />;
 }
 
 export default ConnexInscri;
