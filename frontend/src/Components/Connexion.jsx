@@ -3,7 +3,6 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
 
 export default function Connexion() {
