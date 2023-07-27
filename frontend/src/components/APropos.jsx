@@ -1,6 +1,9 @@
 import React from "react";
 
 function APropos() {
+  const handleRightClick = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="bg-primary_blue">
       <div className="flex justify-evenly mx-10 pt-20">
@@ -29,6 +32,7 @@ function APropos() {
           src="./src/assets/image_icono.svg"
           alt="Iconotheque"
           className="w-2/5 border-[12px] border-primary_black object-cover"
+          onContextMenu={handleRightClick}
         />
       </div>
       <div>

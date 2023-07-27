@@ -1,12 +1,16 @@
+import axios from "axios";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "../context/useAuth";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+// eslint-disable-next-line import/no-extraneous-dependencies, import/order
+import { info } from "autoprefixer";
 
 export default function Connexion() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const good = () => {
     toast.success("Vous êtes bien connecté !", {
@@ -47,10 +51,17 @@ export default function Connexion() {
           body
         );
         if (reslogin.status === 200) {
+          const jsonadmin = await reslogin.data;
+          login({
+            admin: jsonadmin.admin,
+            email,
+            id: jsonadmin.id,
+          });
           good();
           navigate("/accueil");
         }
       } catch (error) {
+        info(error);
         wrong();
       }
     };

@@ -21,7 +21,6 @@ export function AuthProvider({ children }) {
   });
 
   useEffect(() => {
-    // reconnexion peuple user
     if (
       !user.email &&
       document.cookie.match(import.meta.env.VITE_NAME_COOKIE)

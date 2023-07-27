@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useAuth } from "../context/useAuth";
 
 export default function NavBar() {
+  const { user } = useAuth();
+
   return (
     <header className="flexx bg-primary_black">
-      <a href="/">
+      <Link to="/">
         <img
           src="./src/assets/logo/logo-AFAC.png"
           alt="logo AFAC"
@@ -12,7 +15,7 @@ export default function NavBar() {
           height="50"
           className="logo-AFAC"
         />
-      </a>
+      </Link>
       <nav>
         <ul className="container">
           <li className="navList">
@@ -28,9 +31,11 @@ export default function NavBar() {
           <li className="navList">
             <Link to="/aPropos">A Propos</Link>
           </li>
-          <li className="navList">
-            <Link to="/connexion">Connexion</Link>
-          </li>
+          {!user.email ? (
+            <li className="navList">
+              <Link to="/connexion">Connexion</Link>
+            </li>
+          ) : null}
         </ul>
       </nav>
     </header> /*

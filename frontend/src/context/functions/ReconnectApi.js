@@ -1,11 +1,17 @@
 // eslint-disable-next-line import/no-cycle
-import Api from "../../services/Api";
+import axios from "axios";
 
 // eslint-disable-next-line import/prefer-default-export
 export async function LoadUser(id) {
-  return Api.apigetmysql(
-    `${import.meta.env.VITE_BACKEND_URL}/users/${id}`
-  ).then((res) => {
-    return res;
-  });
+  const url = `${import.meta.env.VITE_BACKEND_URL}/users/${id}`;
+  return axios
+    .get(url)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      // Handle error if needed
+      console.error("Error fetching user:", error);
+      throw error;
+    });
 }

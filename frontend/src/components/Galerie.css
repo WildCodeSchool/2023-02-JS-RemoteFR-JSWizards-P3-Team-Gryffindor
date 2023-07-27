@@ -2,3 +2,46 @@
   position: absolute;
   background-color: ivory;
 }
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Bouton "Liker" */
+.like-button,
+.delete-button,
+.edit-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: rgb(61, 61, 61);
+}
+
+/* Style lorsque le bouton est "liké" */
+.like-button.liked,
+.delete-button.liked,
+.edit-button.liked {
+  color: white;
+}
+.contact-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: right 0.3s, top 0.3s;
+  color: rgb(61, 61, 61);
+  position: fixed;
+  top: 6rem;
+  right: 1rem;
+}
+.folder-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: right 0.3s, top 0.3s;
+  color: rgb(61, 61, 61);
+  position: fixed;
+  top: 6rem;
+  right: 3rem;
+}

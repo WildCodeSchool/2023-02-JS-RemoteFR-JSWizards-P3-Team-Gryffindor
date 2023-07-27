@@ -1,6 +1,9 @@
 import React from "react";
 
 function Biographie() {
+  const handleRightClick = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="bg-primary_blue min-h-auto">
       <div>
@@ -14,6 +17,7 @@ function Biographie() {
           mr-40 ml-40"
           src="./src/assets/Napoléon_Mortier_de_Trévise.png"
           alt="Hippolyte Mortier de Trévise"
+          onContextMenu={handleRightClick}
         />
         <p className="text-left w-1/2 mt-10 text-white mr-32">
           Hippolyte Charles Napoléon Mortier de Trévise, 3e duc de Trévise, est
