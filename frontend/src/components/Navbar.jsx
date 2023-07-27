@@ -38,39 +38,6 @@ export default function NavBar() {
           ) : null}
         </ul>
       </nav>
-    </header> /*
-    <header className="flexx bg-primary_black">
-      <a href="/acceuil">
-        <img
-          src="./src/assets/logo/logo-AFAC.png"
-          alt="logo AFAC"
-          width="100"
-          height="50"
-          className="logo-AFAC"
-        />
-      </a>
-      <nav>
-        <ul className="container">
-          <li className="navList">
-            <a href="acceuil">Acceuil</a>
-          </li>
-          <li className="navList">
-            <a href="galerie">Galerie</a>
-          </li>
-          <li className="navList">
-            <a href="oeuvres">Oeuvres</a>
-          </li>
-          <li className="navList">
-            <a href="auteurs">Auteurs</a>
-          </li>
-          <li className="navList">
-            <a href="aPropos">A Propos</a>
-          </li>
-          <li className="navList">
-            <a href="connexion">Connexion</a>
-          </li>
-        </ul>
-      </nav>
-    </header> */
+    </header>
   );
 }

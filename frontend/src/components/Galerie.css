@@ -1,6 +1,7 @@
 .texthover {
   position: absolute;
   background-color: ivory;
+  cursor: pointer;
 }
 
 .button-container {

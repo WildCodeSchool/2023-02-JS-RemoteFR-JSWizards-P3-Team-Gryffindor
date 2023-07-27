@@ -1,15 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./Components/Navbar";
+import NavBar from "./components/Navbar";
 import "./App.css";
 import { AuthProvider } from "./context/useAuth";
 
-import Gallery from "./Components/Galerie";
+import Gallery from "./components/Galerie";
 import AuteurPage from "./pages/AuteurPage";
 import ConnexInscri from "./pages/ConnexInscriPage";
+// import InscriConnexion from "./pages/InscriConnexion";
 import AProposPage from "./pages/AProposPage";
-import Accueil from "./Components/Accueil";
-import OeuvreSolo from "./Components/OeuvreSolo";
-// import Utilisateur from "./Components/Utilisateur";
+import Accueil from "./components/Accueil";
+import OeuvreSolo from "./components/OeuvreSolo";
+// import imagesData from "./components/Oeuvres.json"; // Importez le fichier JSON d'œuvres
 
 function App() {
   return (

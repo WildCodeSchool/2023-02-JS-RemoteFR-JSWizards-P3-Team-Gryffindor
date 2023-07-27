@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import img1 from "../assets/images/Cheminee_40FI79.jpg";
+import img2 from "../assets/images/UsineBelAir_40FI78.jpg";
+import img3 from "../assets/images/FRAD974_40FI80.jpg";
 
 function Carrousel() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -7,17 +10,17 @@ function Carrousel() {
     {
       id: 1,
       reference: "40FI79",
-      image: "./src/assets/images/Cheminee_40FI79.jpg",
+      image: img1,
     },
     {
       id: 2,
       reference: "40FI78",
-      image: "./src/assets/images/UsineBelAir_40FI78.jpg",
+      image: img2,
     },
     {
       id: 3,
       reference: "40FI80",
-      image: "./src/assets/images/FRAD974_40FI80.jpg",
+      image: img3,
     },
   ];
 

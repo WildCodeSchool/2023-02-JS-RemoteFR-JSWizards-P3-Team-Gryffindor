@@ -77,6 +77,9 @@ export default function Inscription() {
       // info("email non conformz"); toast a faire
     }
   };
+  const handleInscriptionClick = () => {
+    navigate("/connexion");
+  };
 
   const info = () => {
     Modal.info({
@@ -91,7 +94,7 @@ export default function Inscription() {
   };
 
   return (
-    <div className="flex justify-center items-center bg-primary_blue">
+    <div className="flex justify-center items-center h-[45rem] bg-primary_blue">
       <Form
         name="normal_login"
         className="login-form bg-connexion_login w-80 h-auto rounded-3xl border-solid	border-2 border-black"
@@ -100,8 +103,9 @@ export default function Inscription() {
         }}
         onFinish={handleSubmit}
       >
+        <h1 className="text-2xl font-medium	pt-5">Bienvenue</h1>
         <Form.Item
-          className="pr-4 pl-4 pt-20"
+          className="pr-4 pl-4 pt-10"
           name="email"
           rules={[
             {
@@ -141,7 +145,7 @@ export default function Inscription() {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
             type="password"
@@ -158,14 +162,14 @@ export default function Inscription() {
             },
           ]}
         >
-          <Input
+          <Input.Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Confirmez votre mot de passe"
           />
         </Form.Item>
         <Form.Item
-          className="pr-8 pl-8"
+          className="pr-8 mb-0 pl-8"
           name="rgpd"
           valuePropName="checked"
           rules={[
@@ -175,30 +179,43 @@ export default function Inscription() {
             },
           ]}
         >
-          <Checkbox className="pr-4 pl-4" onChange={handleRGPDChange}>
+          <Checkbox className="pr-4 pl-4 mb-4" onChange={handleRGPDChange}>
             J'accepte les termes et conditions liés à la RGPD.
           </Checkbox>
         </Form.Item>
+        <Form.Item>
+          <Button type="text" className="bg-[#cccccc]" onClick={info}>
+            Consulter les CGU
+          </Button>
+        </Form.Item>
         {!acceptedRGPD && (
           <Form.Item>
-            <p className="text-red-500">
+            <p className="text-red-500 ">
               Veuillez accepter les termes et conditions liés à la RGPD.
             </p>
           </Form.Item>
         )}
-        {acceptedRGPD && (
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button text-black border-solid border-1 border-sky-500"
-            >
-              Inscription
-            </Button>
-          </Form.Item>
-        )}
+
         <Form.Item>
-          <Button onClick={info}>Consulter les CGU</Button>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button text-black border-solid border-1 border-sky-500"
+          >
+            Inscription
+          </Button>
+        </Form.Item>
+        <Form.Item>
+          <p className="login-form-forgot ">
+            Déjà inscrit ?&nbsp;
+            <a
+              href="#"
+              className="text-regiser_b hover:underline hover:text-regiser_b "
+              onClick={handleInscriptionClick}
+            >
+              Connectez-vous
+            </a>
+          </p>
         </Form.Item>
       </Form>
       <ToastContainer />

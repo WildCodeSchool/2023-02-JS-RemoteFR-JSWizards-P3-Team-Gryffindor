@@ -20,14 +20,6 @@ function Gallery() {
   // eslint-disable-next-line no-unused-vars
   const [likes, setLikes] = useState({});
 
-  // let token;
-  // if (document.cookie.match(import.meta.env.VITE_NAME_COOKIE)) {
-  //   token = document.cookie
-  //     .split("; ")
-  //     .find((row) => row.startsWith(import.meta.env.VITE_NAME_COOKIE))
-  //     ?.split("=Bearer%20")[1];
-  // }
-
   useEffect(() => {
     const getImages = async () => {
       try {
@@ -47,7 +39,7 @@ function Gallery() {
         }
       } catch (error) {
         // eslint-disable-next-line no-undef
-        info(error);
+        console.error(error);
       }
     };
     getImages();
@@ -61,7 +53,7 @@ function Gallery() {
   const handleDelete = (imageId) => {
     const delImages = async () => {
       try {
-        const token = "YOUR_ACCESS_TOKEN";
+        const token = "YOUR_ACCESS_TOKEN"; // You need to provide your access token here
         const config = {
           headers: {
             "Content-Type": "application/json",
@@ -114,9 +106,9 @@ function Gallery() {
           <span className="placeholder-title">Galerie</span>
         </h1>
       </div>
-
       <div className="bg-primary_blue flex justify-center">
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-3 gap-12 mr-20">
+          {/* eslint-disable */}
           {images.map((image) => (
             <div
               key={image.id}
@@ -129,17 +121,15 @@ function Gallery() {
                 className="object-cover h-full w-full opacity-100 hover:opacity-30"
                 onContextMenu={handleRightClick}
               />
-              <a href="/oeuvres">
-                <div className="texthover opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-300 absolute inset-0 flex items-center justify-center">
-                  <div className="text grey-600 italic">
-                    <p>{image.type}</p>
-
-                    <div className="text grey-600 font-bold">
-                      <p>{image.res}</p>
-                    </div>
+              <div className="texthover opacity-0 hover:opacity-90 backdrop-filter backdrop-blur-md transition-opacity ease-in-out duration-300 absolute inset-0 flex items-center justify-center">
+                <div className="text grey-600 italic">
+                  <p>{image.type}</p>
+                  <div className="text grey-600 font-bold">
+                    <p>{image.res}</p>
+                    <p>{image.ref}</p>
                   </div>
                 </div>
-              </a>
+              </div>
               <div className="button-container">
                 {user.email ? (
                   <button
